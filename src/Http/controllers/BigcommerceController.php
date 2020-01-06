@@ -4,8 +4,7 @@ namespace Bigcommerce\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Client;
+
 
 
 class BigcommerceController extends Controller {
@@ -15,13 +14,11 @@ class BigcommerceController extends Controller {
        print_r("hello");die;
     }
 
-    public function getCatApi()
+    public function getGitGuzzle()
     {
-        $client = new Client(); //GuzzleHttp\Client
-        $request = $client->get('https://api.thecatapi.com/v1/breeds');
-        $response = $request->getBody();
-       
-        dd($response);
+        $client = new \GuzzleHttp\Client();
+        $response = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
+        echo $response->getBody(); // '{"id": 1420053, "name": "guzzle", ...}'
     }
 
 
