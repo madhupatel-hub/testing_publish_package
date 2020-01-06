@@ -1,0 +1,14 @@
+{
+    "name": "Bigcommerce",
+    "description": "use unirest in laravel",
+    "authors": [{
+        "name": "Madhu",
+        "email": "madhu.constacloud@gmail.com"
+    }],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Bigcommerce\\": "src/"
+        }
+    }
+}
